@@ -16,29 +16,30 @@ To configure Karma, run `karma init karma.conf.js`. This will ask you a few ques
 ## Example Usage using karma init
 
 
->karma init
+>`karma init`
 
 Which testing framework do you want to use?
->jasmine
+>`jasmine`
 
 Do you want to use Require.js?
->yes
+>`yes`
 
 Do you want to capture a browser automatically?
->Chrome
+>`Chrome`
 
 Which files do you want to include with `<script>` tag?
->test/main.js
+>`test/main.js`
 
 Which files do you want to test?
->public/javascripts/**/*.js
->tests/*spec.js
+>`public/javascripts/**/*.js`
+
+>`tests/*spec.js`
 
 Any files you want to exclude?
->
+> 
 
 Do you want Karma to watch all the files and run the tests on change?
->yes
+>`yes`
 
 Config file generated at "C:\Code\mimosa-new\karma.conf.js"
 
