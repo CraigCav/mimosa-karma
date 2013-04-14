@@ -19,22 +19,22 @@ exports.placeholder = function() {
          "                                      # If an external karma configuration file is used, no other settings are needed here. \n\n" +
 
          "    # files: [                        # List of files/patterns/adapters for karma to load in the browser.\n" +
-         "      JASMINE: true                   # The first thing you usually need is an adapter for your test lib.\n" +
-         "      JASMINE_ADAPTER: true           # If you want to use any of these, add <FRAMEWORK> and <FRAMEWORK>_ADAPTER to your files list.\n" +
-         "      REQUIRE: true                   # The following adapters are bundled with Karma:\n" +
-         "      REQUIRE_ADAPTER: true           # Jasmine (JASMINE, JASMINE_ADAPTER)\n" +
+         "    # JASMINE: true                   # The first thing you usually need is an adapter for your test lib.\n" +
+         "    # JASMINE_ADAPTER: true           # If you want to use any of these, add <FRAMEWORK> and <FRAMEWORK>_ADAPTER to your files list.\n" +
+         "    # REQUIRE: true                   # The following adapters are bundled with Karma:\n" +
+         "    # REQUIRE_ADAPTER: true           # Jasmine (JASMINE, JASMINE_ADAPTER)\n" +
          "                                      # Mocha (MOCHA, MOCHA_ADAPTER)\n" +
          "                                      # QUnit (QUNIT, QUNIT_ADAPTER)\n" +
          "                                      # RequireJS (REQUIRE, REQUIRE_ADAPTER)\n" +
          "                                      # Angular Scenario Runner (ANGULAR_SCENARIO, ANGULAR_SCENARIO_ADAPTER).\n" +
          "                                      # You will also want to include files and patterns to tell karma about your \n" +
          "                                      # source and test modules: \n" +
-         "      'tests/test.main.js'            # All the relative patterns will get resolved to basePath first.\n" +
+         "    # 'tests/test.main.js'            # All the relative patterns will get resolved to basePath first.\n" +
          "                                      # If the basePath is a relative path, it gets resolved to the directory where the configuration file is.\n" +
          "                                      # You can also use expressions to resolve paths.\n" +
-         "      {pattern: 'public/javascripts/**/*.js', included: false }\n" +  
+         "    # {pattern: 'public/javascripts/**/*.js', included: false }\n" +  
          "                                      # When incling modules to be loaded require, set included: false.\n" +
-         "    ]\n" +
+         "    # ]\n" +
 
          "    # autoWatch: true                 # Enable or disable executing the tests whenever one of these files changes. \n" +
          "    # basePath: 'karma.conf.js'       # Base path, that will be used to resolve all relative paths defined in .\n" +
