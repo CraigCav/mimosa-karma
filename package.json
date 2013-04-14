@@ -1,0 +1,33 @@
+{
+  "name": "mimosa-karma",
+  "version": "0.0.1",
+  "homepage": "https://github.com/craigcav/mimosa-karma",
+  "author": "Craig Cavalier",
+  "description": "Mimosa module for kicking of your test suite against real browsers - whenever you make changes to your code!",
+  "contributors": [
+    {
+      "name": "Craig Cavalier",
+      "email": "craigcav@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/craigcav/mimosa-karma"
+  },
+  "keywords": [
+    "mimosa",
+    "mmodule",
+    "karma",
+    "karma-runner",
+    "auto-watch",
+    "testing"
+  ],
+  "dependencies": {
+    "karma": "0.8.4",
+    "logmimosa": "0.4.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.8"
+  }
+}
