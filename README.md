@@ -28,7 +28,7 @@ Do you want to capture a browser automatically?
 >`Chrome`
 
 Which files do you want to include with `<script>` tag?
->`test/main.js`
+>`tests/test.main.js`
 
 Which files do you want to test?
 >`public/javascripts/**/*.js`
@@ -44,7 +44,7 @@ Do you want Karma to watch all the files and run the tests on change?
 Config file generated at "C:\Code\mimosa-new\karma.conf.js"
 
 
-In the above example `test/main.js` is a file that configures RequireJS for the tests. See: http://karma-runner.github.io/0.8/plus/RequireJS.html.
+In the above example we have a folder in the root of our Mimosa application called tests. Tests contains two files: a spec file `test/example-view.spec.js` which describes the functionality of the application view `app/example-view.js` and `test/main.js` which is a file that configures RequireJS for the tests. See http://karma-runner.github.io/0.8/plus/RequireJS.html for more details about configuring RequireJS with Karma.
 
 ## Functionality
 
