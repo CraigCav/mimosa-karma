@@ -4,7 +4,7 @@ var karma = require('karma');
 
 var registration = function(config, register) {
   if (config.karma && config.isWatch) {
-    _startKarma(config);
+    register(['postBuild'], 'complete', _startKarma);
   }
 };
 
