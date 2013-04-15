@@ -23,8 +23,7 @@
     "testing"
   ],
   "dependencies": {
-    "karma": "0.8.4",
-    "logmimosa": "0.4.0"
+    "karma": "0.8.4"
   },
   "license": "MIT",
   "engines": {
