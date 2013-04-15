@@ -6,7 +6,10 @@ var path = require('path');
 exports.defaults = function() {
   return { 
     karma: {
-      configFile: 'karma.conf.js'
+      externalConfig: false, 
+      configFile: 'karma.conf.js',
+      basePath: '',
+      autoWatch: true
     } 
   };
 };
@@ -16,7 +19,7 @@ exports.placeholder = function() {
          "  # karma:                            # Configuration for executing tests via karma\n" + 
          "    # configFile: 'karma.conf.js'     # Optional path to an external karma configuration file, see: \n" +
          "                                      # [http://karma-runner.github.io/0.8/config/configuration-file.html]\n" +
-         "                                      # If an external karma configuration file is used, no other settings are needed here. \n\n" +
+         "    # externalConfig: false           # If an external karma configuration file is used, no further settings are needed. \n\n" +
 
          "    # files: [                        # List of files/patterns/adapters for karma to load in the browser.\n" +
          "    # JASMINE: true                   # The first thing you usually need is an adapter for your test lib.\n" +
@@ -37,7 +40,7 @@ exports.placeholder = function() {
          "    # ]\n" +
 
          "    # autoWatch: true                 # Enable or disable executing the tests whenever one of these files changes. \n" +
-         "    # basePath: 'karma.conf.js'       # Base path, that will be used to resolve all relative paths defined in .\n" +
+         "    # basePath: ''                    # Base path that will be used to resolve all relative paths defined in \n" +
          "                                      # files and exclude. If basePath is a relative path, it will be resolved to the __dirname of the configuration file.\n" +
          "    # browsers: []                    # A list of browsers to launch and capture. Once Karma is shut down, it will shut down these \n" +
          "                                      # browsers as well. You can capture any browser manually just by opening a url, where Karma's web server is listening. \n" +
@@ -48,13 +51,17 @@ exports.validate = function(config, validators) {
   var errors = [];
   validators.ifExistsIsObject(errors, "karma config", config.karma);
 
-  if(config.karma.configFile) {
+  if(config.karma.externalConfig) {
     config.karma.configFile = validators.determinePath(config.karma.configFile, config.root);
 
     if(!fs.existsSync(config.karma.configFile))
       errors.push("config.karma.configFile [[ " + config.karma.configFile + " ]] cannot be found");
     else if (fs.statSync(config.karma.configFile).isDirectory())
       errors.push ("config.karma.configFile [[ " + config.karma.configFile + " ]] cannot be found, expecting a file and is a directory");
+  }
+  else {
+    //remove default config settings in order to prevent karma looking for it
+    config.karma.configFile = undefined;
   }
 
   if (typeof config.karma.basePath === "string") {

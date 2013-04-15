@@ -41,7 +41,7 @@ exports.config = {
                                          # is set to 0, no throttling is performed. Recommended
                                          # to leave this set at 0, thedefault, until you start
                                          # encountering EMFILE problems.
-	
+  
 
   # compilers:
     # extensionOverrides:       # A list of extension overrides, format is:
@@ -109,7 +109,7 @@ exports.config = {
   # the extensions of files to copy from sourceDir to compiledDir. vendor js/css, images, etc.
   ###
   # copy:
-    # extensions: ["js","css","png","jpg","jpeg","gif","html","eot","svg","ttf","woff","otf","yaml","kml","ico","htc","htm","json","txt","xml","xsd","map"]	
+    # extensions: ["js","css","png","jpg","jpeg","gif","html","eot","svg","ttf","woff","otf","yaml","kml","ico","htc","htm","json","txt","xml","xsd","map"] 
 
   # growl:
     # onStartup: false       # Controls whether or not to Growl when assets successfully
@@ -122,7 +122,7 @@ exports.config = {
       # javascript: true     # growl on successful compilation? will always send on failure
       # css: true            # growl on successful compilation? will always send on failure
       # template: true       # growl on successful compilation? will always send on failure
-      # copy: true           # growl on successful copy?	
+      # copy: true           # growl on successful copy?  
 
   server:                      # configuration for server when server option is enabled via CLI
     defaultServer:
@@ -143,7 +143,7 @@ exports.config = {
       # path: 'views'            # This is the path to project views, it can be absolute or
                                  # relative. If defaultServer.enabled is true, it is relative to the
                                  # root of the project. If defaultServer.enabled is false it is
-                                 # relative to the server.path setting above.	
+                                 # relative to the server.path setting above. 
 
   # require:                 # configuration for requirejs options.
     # commonConfig: "common" # The path from 'javascriptDir' to the location of common requirejs
@@ -168,7 +168,7 @@ exports.config = {
                              #
                              # overrides can also be a function that takes mimosa-require's
                              # inferred config for each module. This allows the inferred config
-                             # to be updated and enhanced instead of just overridden.	
+                             # to be updated and enhanced instead of just overridden. 
 
   # minify:                     # Configuration for non-require minification/compression via
                                 # uglify using the --minify flag.
@@ -177,7 +177,7 @@ exports.config = {
                                 # like jquery.min.js, is assumed to already be minified and is
                                 # ignored by default. Paths can be relative to the
                                 # watch.compiledDir, or absolute.  Paths are to compiled files,
-                                # so '.js' rather than '.coffee'	
+                                # so '.js' rather than '.coffee'  
 
   # lint:                      # settings for js, css linting/hinting
     # exclude:[]               # array of strings or regexes that match files to not lint,
@@ -204,41 +204,42 @@ exports.config = {
                                # override any settings set up in the jshintrc
         # plusplus: true       # This is an example override, this is not a default
       # css:                   # Settings: https://github.com/stubbornella/csslint/wiki/Rules
-        # floats: false        # This is an example override, this is not a default	
+        # floats: false        # This is an example override, this is not a default 
 
   # liveReload:                   # Configuration for live-reload
     # enabled:true                # Whether or not live-reload is enabled
     # additionalDirs:["views"]    # Additional directories outside the watch.compiledDir
                                   # that you would like to have trigger a page refresh,
                                   # like, by default, static views. Is string path,
-                                  # can be relative to project root, or absolute	
+                                  # can be relative to project root, or absolute  
 
-  # karma:                            # Configuration for executing tests via karma
+  karma:                            # Configuration for executing tests via karma
     # configFile: 'karma.conf.js'     # Optional path to an external karma configuration file, see: 
                                       # [http://karma-runner.github.io/0.8/config/configuration-file.html]
-                                      # If an external karma configuration file is used, no other settings are needed here. 
+    # externalConfig: false           # If an external karma configuration file is used, no other settings are needed here. 
 
-    # files: [                        # List of files/patterns/adapters for karma to load in the browser.
-    # JASMINE: true                   # The first thing you usually need is an adapter for your test lib.
-    # JASMINE_ADAPTER: true           # If you want to use any of these, add <FRAMEWORK> and <FRAMEWORK>_ADAPTER to your files list.
-    # REQUIRE: true                   # The following adapters are bundled with Karma:
-    # REQUIRE_ADAPTER: true           # Jasmine (JASMINE, JASMINE_ADAPTER)
+    files: [                          # List of files/patterns/adapters for karma to load in the browser.
+      JASMINE: true                   # The first thing you usually need is an adapter for your test lib.
+      JASMINE_ADAPTER: true           # If you want to use any of these, add <FRAMEWORK> and <FRAMEWORK>_ADAPTER to your files list.
+      REQUIRE: true                   # The following adapters are bundled with Karma:
+      REQUIRE_ADAPTER: true           # Jasmine (JASMINE, JASMINE_ADAPTER)
                                       # Mocha (MOCHA, MOCHA_ADAPTER)
                                       # QUnit (QUNIT, QUNIT_ADAPTER)
                                       # RequireJS (REQUIRE, REQUIRE_ADAPTER)
                                       # Angular Scenario Runner (ANGULAR_SCENARIO, ANGULAR_SCENARIO_ADAPTER).
                                       # You will also want to include files and patterns to tell karma about your 
                                       # source and test modules: 
-    # 'tests/test.main.js'            # All the relative patterns will get resolved to basePath first.
+      'tests/test.main.js'            # All the relative patterns will get resolved to basePath first.
                                       # If the basePath is a relative path, it gets resolved to the directory where the configuration file is.
                                       # You can also use expressions to resolve paths.
-    # {pattern: 'public/javascripts/**/*.js', included: false }
+      { pattern: 'public/javascripts/**/*.js', included: false }
+      { pattern: 'tests/*spec.js', included: false }
                                       # When incling modules to be loaded require, set included: false.
-    # ]
+    ]
     # autoWatch: true                 # Enable or disable executing the tests whenever one of these files changes. 
     # basePath: 'karma.conf.js'       # Base path, that will be used to resolve all relative paths defined in .
                                       # files and exclude. If basePath is a relative path, it will be resolved to the __dirname of the configuration file.
-    # browsers: []                    # A list of browsers to launch and capture. Once Karma is shut down, it will shut down these 
+    browsers: ['Chrome']              # A list of browsers to launch and capture. Once Karma is shut down, it will shut down these 
                                       # browsers as well. You can capture any browser manually just by opening a url, where Karma's web server is listening. 
                                       # currently available: Chrome, ChromeCanary, Firefox, Opera, Safari (only Mac), PhantomJS, IE (only Windows). 
 

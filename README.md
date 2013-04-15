@@ -11,10 +11,11 @@ For more information regarding Karma, see http://karma-runner.github.io/
 
 Add `'mimosa-karma'` to your list of modules.  That's all!  Mimosa will install the module for you when you start up.
 
-To configure Karma, run `karma init karma.conf.js`. This will ask you a few questions and generate a config file for Karma named karma.conf.js. If you prefer all your configuration to be in one place however, you can alternatively use your mimosa config file, adding the relevant configuration under a section named karma.
+To configure Karma, run `karma init karma.conf.js`. This will ask you a few questions and generate a config file for Karma named karma.conf.js. If you prefer all your configuration to be in one place however, you can alternatively use your mimosa config file, adding the relevant configuration under a section named karma. The following link shows an example of how you can specify your karma configuration in Mimosa's config file eliminating the need for karma.conf.js: https://github.com/CraigCav/mimosa-karma/tree/master/example.
 
 ## Example Usage using karma init
 
+From the command prompt:
 
 >`karma init`
 
@@ -46,6 +47,19 @@ Config file generated at "C:\Code\mimosa-new\karma.conf.js"
 
 In the above example we have a folder in the root of our Mimosa application called tests. Tests contains two files: a spec file `test/example-view.spec.js` which describes the functionality of the application view `app/example-view.js` and `test/main.js` which is a file that configures RequireJS for the tests. See http://karma-runner.github.io/0.8/plus/RequireJS.html for more details about configuring RequireJS with Karma.
 
+Now open up the mimosa config file (e.g. mimosa-config.coffee) and mark that we wish to use an external karma configuration:
+
+```
+karma:
+  configFile: 'karma.conf.js'
+  externalConfig: true
+```
+
+Now run mimosa watch as usual. You should see the karma output whenever you save changes to a file. e.g.:
+
+>'Chrome 26.0 (Windows): Executed 1 of 1 SUCCESS (0.138 secs / 0.006 secs)'
+
+
 ## Functionality
 
 The `mimosa-karma` module will spin up a karma server whenever running `mimosa watch --server`, it will then let karma watch your configured list of files/and folders for changes and will then run your test suite.
@@ -55,9 +69,16 @@ The `mimosa-karma` module will spin up a karma server whenever running `mimosa w
 ```
 karma:
   configFile: 'karma.conf.js'
+  externalConfig: false
+  basePath: ''
+  autoWatch: true
 ```
 
 * `configFile`: Optional path to an external karma configuration file, see: [http://karma-runner.github.io/0.8/config/configuration-file.html]. If an external karma configuration file is used, no other settings are needed.
+* `externalConfig`: Denotes whether or not an external karma configuration file is used, the default is false.
+* `basePath`: Base path that will be used to resolve all relative paths defined under files or exclude sections. The default is an empty string.
+* `autoWatch`: Enable or disable executing the tests whenever a watched file changes. The default is true (autowatch enabled).
+
 
 ## Example Config
 
