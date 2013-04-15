@@ -2,16 +2,21 @@ mimosa-karma
 ===========
 
 ## Overview
-This is a Mimosa module for starting up a Karma test suite alongside Mimosa in order to get instant feedback on your tests whenever your code changes. 
+This is a Mimosa module for starting up a Karma test suite alongside Mimosa. This enables mimosa to give you instant feedback on your tests whenever your code changes. 
 
 For more information regarding Mimosa, see http://mimosajs.com
+
 For more information regarding Karma, see http://karma-runner.github.io/
 
 ## Usage
 
-Add `'mimosa-karma'` to your list of modules.  That's all!  Mimosa will install the module for you when you start up.
+Add `'mimosa-karma'` to your list of modules.  Mimosa will install the module for you when you start up.
 
-To configure Karma, run `karma init karma.conf.js`. This will ask you a few questions and generate a config file for Karma named karma.conf.js. If you prefer all your configuration to be in one place however, you can alternatively use your mimosa config file, adding the relevant configuration under a section named karma. The following link shows an example of how you can specify your karma configuration in Mimosa's config file eliminating the need for karma.conf.js: https://github.com/CraigCav/mimosa-karma/tree/master/example.
+There are two approaches for configuring Karma, either run `karma init` or you can tweak your mimosa config. 
+
+To configure Karma with `karma init`, run `karma init karma.conf.js`. This will ask you a few questions and generate a config file for Karma named karma.conf.js. 
+
+If you prefer all your configuration to be in one place however, you can alternatively use your mimosa config file, adding the relevant configuration under a section named karma. The following link shows an example of how you can specify your karma configuration in Mimosa's config file eliminating the need for karma.conf.js: https://github.com/CraigCav/mimosa-karma/tree/master/example.
 
 ## Example Usage using karma init
 
@@ -45,7 +50,7 @@ Do you want Karma to watch all the files and run the tests on change?
 Config file generated at "C:\Code\mimosa-new\karma.conf.js"
 
 
-In the above example we have a folder in the root of our Mimosa application called tests. Tests contains two files: a spec file `test/example-view.spec.js` which describes the functionality of the application view `app/example-view.js` and `test/main.js` which is a file that configures RequireJS for the tests. See http://karma-runner.github.io/0.8/plus/RequireJS.html for more details about configuring RequireJS with Karma.
+In the above example we have a folder in the root of our Mimosa application called tests. Tests contains two files: a spec file `test/example-view.spec.js` which describes the functionality of `app/example-view.js` and `test/main.js` which is a file that configures RequireJS for loading the test suite. See http://karma-runner.github.io/0.8/plus/RequireJS.html for more details about configuring RequireJS with Karma.
 
 Now open up the mimosa config file (e.g. mimosa-config.coffee) and mark that we wish to use an external karma configuration:
 
@@ -74,7 +79,7 @@ karma:
   autoWatch: true
 ```
 
-* `configFile`: Optional path to an external karma configuration file, see: [http://karma-runner.github.io/0.8/config/configuration-file.html]. If an external karma configuration file is used, no other settings are needed.
+* `configFile`: Optional path to an external karma configuration file, see: http://karma-runner.github.io/0.8/config/configuration-file.html. If an external karma configuration file is used, no other settings are needed.
 * `externalConfig`: Denotes whether or not an external karma configuration file is used, the default is false.
 * `basePath`: Base path that will be used to resolve all relative paths defined under files or exclude sections. The default is an empty string.
 * `autoWatch`: Enable or disable executing the tests whenever a watched file changes. The default is true (autowatch enabled).
