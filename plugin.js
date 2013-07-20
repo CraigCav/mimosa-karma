@@ -8,8 +8,9 @@ var registration = function(config, register) {
   }
 };
 
-var _startKarma = function(config) {
+var _startKarma = function(config, options, next) {
   karma.server.start(config.karma);
+  next()
 };
 
 module.exports = {
