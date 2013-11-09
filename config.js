@@ -4,19 +4,19 @@ var fs = require('fs');
 var path = require('path');
 
 exports.defaults = function() {
-  return { 
+  return {
     karma: {
-      externalConfig: false, 
+      externalConfig: false,
       configFile: 'karma.conf.js',
       basePath: '',
       autoWatch: true
-    } 
+    }
   };
 };
 
 exports.placeholder = function() {
   return "\t\n\n"+
-         "  # karma:                            # Configuration for executing tests via karma\n" + 
+         "  # karma:                            # Configuration for executing tests via karma\n" +
          "    # configFile: 'karma.conf.js'     # Optional path to an external karma configuration file, see: \n" +
          "                                      # [http://karma-runner.github.io/0.8/config/configuration-file.html]\n" +
          "    # externalConfig: false           # If an external karma configuration file is used, no further settings are needed. \n\n" +
@@ -35,7 +35,7 @@ exports.placeholder = function() {
          "    # 'tests/test.main.js'            # All the relative patterns will get resolved to basePath first.\n" +
          "                                      # If the basePath is a relative path, it gets resolved to the directory where the configuration file is.\n" +
          "                                      # You can also use expressions to resolve paths.\n" +
-         "    # {pattern: 'public/javascripts/**/*.js', included: false }\n" +  
+         "    # {pattern: 'public/javascripts/**/*.js', included: false }\n" +
          "                                      # When incling modules to be loaded require, set included: false.\n" +
          "    # ]\n" +
 
@@ -82,18 +82,18 @@ function _resolveAdapters(files) {
   var karmaFile = require.resolve('karma');
   var karmaPath = path.dirname(karmaFile);
 
-  var ADAPTER_DIR = karmaPath + '/../adapter';
+  var ADAPTER_DIR = karmaPath + '/../../';
   var configEnv = {
-    JASMINE: ADAPTER_DIR + '/lib/jasmine.js',
-    JASMINE_ADAPTER: ADAPTER_DIR + '/jasmine.js',
-    MOCHA: ADAPTER_DIR + '/lib/mocha.js',
-    MOCHA_ADAPTER: ADAPTER_DIR + '/mocha.js',
-    ANGULAR_SCENARIO: ADAPTER_DIR + '/lib/angular-scenario.js',
-    ANGULAR_SCENARIO_ADAPTER: ADAPTER_DIR + '/angular-scenario.js',
-    REQUIRE: ADAPTER_DIR + '/lib/require.js',
-    REQUIRE_ADAPTER: ADAPTER_DIR + '/require.js',
-    QUNIT: ADAPTER_DIR + '/lib/qunit.js',
-    QUNIT_ADAPTER: ADAPTER_DIR + '/qunit.js',
+    JASMINE: ADAPTER_DIR + 'karma-jasmine/lib/jasmine.js',
+    JASMINE_ADAPTER: ADAPTER_DIR + 'karma-jasmine/lib/adapter.js',
+    MOCHA: ADAPTER_DIR + 'karma-mocha/lib/mocha.js',
+    MOCHA_ADAPTER: ADAPTER_DIR + 'karma-mocha/lib/adapter.js',
+    ANGULAR_SCENARIO: ADAPTER_DIR + 'karma-angular-scenario/lib/angular-scenario.js',
+    ANGULAR_SCENARIO_ADAPTER: ADAPTER_DIR + 'karma-angular-scenario/lib/adapter.js',
+    REQUIRE: ADAPTER_DIR + 'karma-requirejs/lib/require.js',
+    REQUIRE_ADAPTER: ADAPTER_DIR + 'karma-requirejs/lib/adapter.js',
+    QUNIT: ADAPTER_DIR + 'karma-qunit/lib/qunit.js',
+    QUNIT_ADAPTER: ADAPTER_DIR + 'karma-qunit/lib/adapter.js',
   };
 
   files.forEach(function(file) {
@@ -103,14 +103,14 @@ function _resolveAdapters(files) {
     //make sure file configuration is not a url (i.e. not an adapter)
     if(typeof file === "string") return;
     //make sure file configuration is not a file pattern (i.e. not an adapter)
-    if(file.pattern) return;    
+    if(file.pattern) return;
 
-    adapters.push(file);    
+    adapters.push(file);
 
     //adapter conf is in the format { JASMINE: true, JASMINE_ADAPTER: true }
     Object.keys(file).forEach(function(adapterName) {
       //if the adapter is present, but is not == true, then do not include the adapter
-      if(!file[adapterName]) return;    
+      if(!file[adapterName]) return;
 
       var resolvedPath = configEnv[adapterName];
 
