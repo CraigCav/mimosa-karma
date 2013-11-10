@@ -23,9 +23,7 @@
     "testing"
   ],
   "dependencies": {
-    "karma": "0.9.4"
-  },
-  "peerDependencies": {
+    "karma": "0.9.4",
     "karma-jasmine": "*",
     "karma-requirejs": "*",
     "karma-coffee-preprocessor": "*",
