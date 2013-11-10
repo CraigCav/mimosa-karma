@@ -23,7 +23,6 @@
     "testing"
   ],
   "dependencies": {
-    "karma": "0.9.4",
     "karma-jasmine": "*",
     "karma-requirejs": "*",
     "karma-coffee-preprocessor": "*",
@@ -31,6 +30,7 @@
     "karma-chrome-launcher": "*",
     "karma-firefox-launcher": "*",
     "karma-phantomjs-launcher": "*",
+    "karma": "0.9.4",
     "karma-script-launcher": "*"
   },
   "license": "MIT",
