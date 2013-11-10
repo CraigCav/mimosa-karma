@@ -30,8 +30,8 @@
     "karma-chrome-launcher": "*",
     "karma-firefox-launcher": "*",
     "karma-phantomjs-launcher": "*",
-    "karma": "0.9.4",
-    "karma-script-launcher": "*"
+    "karma-script-launcher": "*",
+    "karma": "0.11.2"
   },
   "license": "MIT",
   "engines": {
