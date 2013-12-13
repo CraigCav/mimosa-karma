@@ -31,7 +31,15 @@
     "karma-firefox-launcher": "*",
     "karma-phantomjs-launcher": "*",
     "karma-script-launcher": "*",
-    "karma": "0.11.2"
+    "karma": "0.11.2",
+
+    "karma-mocha": "*",
+    "karma-coverage": "*",
+    "karma-coffee-preprocessor": "*",
+    "karma-requirejs": "*",
+    "karma-junit-reporter": "*",
+    "karma-chai": "*",
+    "karma-ng-html2js-preprocessor": "*"
   },
   "license": "MIT",
   "engines": {
