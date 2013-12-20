@@ -1,18 +1,20 @@
 {
-  "name": "mimosa-karma",
-  "version": "0.0.2",
-  "homepage": "https://github.com/craigcav/mimosa-karma",
+  "name": "mimosa-karma-enterprise",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dretay/mimosa-karma",
   "author": "Craig Cavalier",
   "description": "Mimosa module for kicking of your test suite against real browsers - whenever you make changes to your code!",
   "contributors": [
     {
       "name": "Craig Cavalier",
-      "email": "craigcav@gmail.com"
+      "email": "craigcav@gmail.com",
+      "name": "Drew Tayman",
+      "email": "dretay@gmail.com"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/craigcav/mimosa-karma"
+    "url": "https://github.com/dretay/mimosa-karma"
   },
   "keywords": [
     "mimosa",
