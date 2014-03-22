@@ -33,7 +33,7 @@
     "karma-firefox-launcher": "*",
     "karma-phantomjs-launcher": "*",
     "karma-script-launcher": "*",
-    "karma": "0.11.2",
+    "karma": "*",
     "karma-mocha": "*",
     "karma-coverage": "*",
     "karma-coffee-preprocessor": "*",
