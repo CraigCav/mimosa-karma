@@ -1,6 +1,6 @@
 {
   "name": "mimosa-karma-enterprise",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://github.com/dretay/mimosa-karma",
   "author": "Craig Cavalier",
   "description": "Mimosa module for kicking of your test suite against real browsers - whenever you make changes to your code!",
