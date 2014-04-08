@@ -9,6 +9,14 @@ For more information regarding Mimosa, see http://mimosajs.com
 For more information regarding Karma, see http://karma-runner.github.io/
 
 ## Usage
+`'mimosa-karma'` requires that karma and any required plugins be installed locally in your project's directory. You can do so like this:
+```
+# Install Karma:
+$ npm install karma --save-dev
+
+# Install plugins that your project needs:
+$ npm install karma-jasmine karma-chrome-launcher --save-dev
+```
 
 Add `'mimosa-karma'` to your list of modules.  Mimosa will install the module for you when you start up.
 
