@@ -1,6 +1,6 @@
 {
   "name": "mimosa-karma",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/craigcav/mimosa-karma",
   "author": "Craig Cavalier",
   "description": "Mimosa module for kicking of your test suite against real browsers - whenever you make changes to your code!",
@@ -8,6 +8,13 @@
     {
       "name": "Craig Cavalier",
       "email": "craigcav@gmail.com"
+    },
+    {
+      "name": "Brandon Pugh",
+      "email": "bp@brandonpugh.com"
+    },
+    {
+      "name": "Doug McCall"
     }
   ],
   "repository": {
