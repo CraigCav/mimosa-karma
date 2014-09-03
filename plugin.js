@@ -9,8 +9,13 @@ var registration = function(config, register) {
 };
 
 var _startKarma = function(config, options, next) {
-  karma.server.start(config.karma);
-  next()
+  karma.server.start(config.karma, function(exitCode){
+    if (exitCode) {
+      config.log.error("Tests failed.", { exitIfBuild: true });
+    }
+
+    next();
+  });
 };
 
 module.exports = {
