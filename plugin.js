@@ -3,7 +3,11 @@
 var karma = require('karma');
 
 var registration = function(config, register) {
-  if (config.karma && config.isWatch) {
+  if (config.karma) {
+    if (config.isWatch) {
+      register(['add', 'update', 'remove'], 'complete', _startKarma);
+    }
+
     register(['postBuild'], 'complete', _startKarma);
   }
 };
